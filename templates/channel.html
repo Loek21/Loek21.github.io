@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block main %}
+<div class="grid_channels">
+    <div class="channel_title">
+        <div>Channels</div>
+    </div>
+    <div class="message_title">
+        <div>Messages</div>
+    </div>
+    <div class="channel_div">
+        <ul id="channels">
+            {% for element in keys %}
+                <li><a href="/channel/{{element}}">{{element}}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="create_channel_div">
+        <input type="text" id="channelname" placeholder="Insert channel name"><br>
+        <button id="button">Create Channel</button>
+        <script src="/static/channels.js"></script>
+    </div>
+    <div class="messages_div">
+        <div id="chat">
+            {% for i in range(messages|length) %}
+                <div name="{{messages[i][1]}}" id="{{messages[i][0]}}{{messages[i][1]}}{{messages[i][2]}}" onclick="Del(this, {{messages[i]}})" title="Delete message.">
+                    {{messages[i][0]}} {{messages[i][1]}}: {{messages[i][2]}}
+                </div>
+            {% endfor %}
+        </div>
+        <script src="/static/delete.js"></script>
+    </div>
+    <div class="create_message_div">
+        <input type="text" id="text_message" placeholder="Type message here"><br>
+        <button id="button3" value="{{name}}">Send</button>
+        <script src="/static/messages.js"></script>
+    </div>
+</div>
+<div id="delete_message"></div>
+{% endblock %}

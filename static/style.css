@@ -1,0 +1,60 @@
+.grid_channels {
+  display: grid;
+  grid-template-columns: 2% 20% 76% 2%;
+  grid-template-rows: 20% 50% 20%;
+  grid-template-areas: ". title_channel title_message ." ". channels messages ." ". create_channel send_message .";
+}
+.grid_channels .channel_div {
+  grid-area: channels;
+  background-color: lightgrey;
+  border-style: solid;
+  border-right: none;
+  border-top: none;
+}
+.grid_channels .messages_div {
+  grid-area: messages;
+  border-style: solid;
+  border-top: none;
+}
+.grid_channels .create_channel_div {
+  grid-area: create_channel;
+  background-color: lightgrey;
+  border-style: solid;
+  border-top: none;
+  border-right: none;
+}
+.grid_channels .create_message_div {
+  grid-area: send_message;
+  border-style: solid;
+  border-top: none;
+}
+.grid_channels .channel_title {
+  grid-area: title_channel;
+  border-style: solid;
+  border-right: none;
+  background-color: lightgrey;
+}
+.grid_channels .message_title {
+  grid-area: title_message;
+  border-style: solid;
+  background-color: lightgrey;
+}
+
+a {
+  color: black;
+}
+
+.username_div {
+  top: 30%;
+  left: 40%;
+  position: fixed;
+  height: 60px;
+  width: 250px;
+  border-style: solid;
+  border-radius: 1%;
+  padding: 20px;
+  background-color: white;
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */
